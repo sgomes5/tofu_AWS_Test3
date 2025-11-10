@@ -1,10 +1,18 @@
-module “website_s3_bucket” {
-  source = “./modules/aws-s3-static-website-bucket”
+resource "aws_instance" "instance_1" {
+  ami           = var.instance_ami
+  instance_type = var.instance_type
+  tags = {
+    Name = var.instance_1_name
+  }
+}
 
-  bucket_name = “clickittech-terraform-best-practices”
+module "website_s3_bucket" {
+  source = "./modules/aws-s3-static-website-bucket"
+
+  bucket_name = clickittech-terraform-best-practices
 
   tags = {
-    Terraform   = “true”
-    Environment = “test”
+    Terraform   = true
+    Environment = test
   }
 }

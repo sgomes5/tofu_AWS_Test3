@@ -1,17 +1,18 @@
 # Input variable definitions
 
-variable “bucket_name” {
-  description = “Name of the s3 bucket. Must be unique.”
+variable "instance_1_ami" {
+  description = "Value of the AMI ID for the EC2 instance"
   type        = string
+  default     = "ami-005de95e8ff495156"
 }
-
-variable “tags” {
-  description = “Tags to set on the bucket.”
-  type        = map(string)
-  default     = {}
-}variable "region" {
+variable "instance_1_type" {
+  description = "Value of the Instance Type for the EC2 instance"
   type        = string
-  description = "The AWS region"
-  default     = "us-east-1"
+  default     = "t2.micro"
+}
+variable "instance_1_name" {
+  description = "Value of the Name Tag for the EC2 instance"
+  type        = string
+  default     = "instance-1"
 }
 
